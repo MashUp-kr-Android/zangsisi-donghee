@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_completion"
+        android:enabled="true"
+        android:icon="@drawable/ic_check_circle_black_24dp"
+        android:title="@string/completion"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_non_completion"
+        android:enabled="true"
+        android:icon="@drawable/ic_cancel_black_24dp"
+        android:title="@string/non_completion"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_search"
+        android:enabled="true"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        app:showAsAction="ifRoom"/>
+
+    <!--<item-->
+    <!--android:id="@+id/action_favorite"-->
+    <!--android:enabled="true"-->
+    <!--android:icon="@drawable/ic_favorite_black_24dp"-->
+    <!--android:title="즐겨찾기"-->
+    <!--app:showAsAction="ifRoom"/>-->
+
+</menu>

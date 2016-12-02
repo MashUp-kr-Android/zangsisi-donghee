@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Zangsisi-donghee</string>
     <string name="action_settings">Settings</string>
+
+    <string name="completion">완결</string>
+    <string name="non_completion">미완결</string>
+    <string name="search">검색</string>
 </resources>
