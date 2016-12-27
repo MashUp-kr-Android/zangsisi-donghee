@@ -5,4 +5,5 @@
     <string name="completion">완결</string>
     <string name="non_completion">미완결</string>
     <string name="search">검색</string>
+    <string name="title_activity_contents">ContentsActivity</string>
 </resources>

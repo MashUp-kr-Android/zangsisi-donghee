@@ -26,6 +26,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     MainPagerAdapter mMainPagerAdapter;
 
+    MenuItem mPreBnvMenuItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,16 +53,18 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
             @Override
             public void onPageSelected(int position) {
-                for(int idx=0; idx<mBnvMain.getMenu().size(); idx++){
-                    mBnvMain.getMenu().getItem(idx).setChecked(false);
+                if(mPreBnvMenuItem != null){
+                    mPreBnvMenuItem.setChecked(false);
                 }
-                mBnvMain.getMenu().getItem(position).setChecked(true);
+                mPreBnvMenuItem = mBnvMain.getMenu().getItem(position);
+                mPreBnvMenuItem.setChecked(true);
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
             }
         });
+        mPreBnvMenuItem = mBnvMain.getMenu().getItem(0);
         mVpMain.setAdapter(mMainPagerAdapter);
     }
 

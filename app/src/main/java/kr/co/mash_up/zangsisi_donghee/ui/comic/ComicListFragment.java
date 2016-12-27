@@ -58,6 +58,9 @@ public class ComicListFragment extends BaseFragment {
         mComicListAdapter.setOnItemClickListener(comic -> {
             // Todo: pass model
             EpisodeBottomSheetDialogFragment bottomSheetDialogFragment = new EpisodeBottomSheetDialogFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("comicId", comic.getId());
+            bottomSheetDialogFragment.setArguments(bundle);
             bottomSheetDialogFragment.show(getChildFragmentManager(), bottomSheetDialogFragment.getTag());
         });
         mRvComic.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));

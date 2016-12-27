@@ -28,6 +28,8 @@ public class ZangsisiApplication extends Application {
         super.onCreate();
         instance = this;
 
+        Realm.init(this);
+
         //Todo: test용 제거
         Realm.deleteRealm(buildRealmConfiguration());
 

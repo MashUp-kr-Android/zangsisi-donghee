@@ -2,9 +2,11 @@
 <manifest package="kr.co.mash_up.zangsisi_donghee"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
-        android:allowBackup="true"
         android:name=".ZangsisiApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -18,6 +20,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.comic.contents.ContentsActivity"
+            android:label="@string/title_activity_contents"
+            android:parentActivityName=".ui.home.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="kr.co.mash_up.zangsisi_donghee.ui.home.MainActivity"/>
         </activity>
     </application>
 

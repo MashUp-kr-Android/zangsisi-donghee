@@ -1,6 +1,7 @@
 package kr.co.mash_up.zangsisi_donghee.ui.comic.episode;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +17,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import kr.co.mash_up.zangsisi_donghee.R;
+import kr.co.mash_up.zangsisi_donghee.data.Comic;
+import kr.co.mash_up.zangsisi_donghee.ui.comic.contents.ContentsActivity;
 
 /**
  * Created by Dong on 2016-12-02.
@@ -45,14 +48,14 @@ public class EpisodeBottomSheetDialogFragment extends BottomSheetDialogFragment 
         //Todo: model restore
     }
 
-    //Todo: receive model
-    public EpisodeBottomSheetDialogFragment(){
-        super();
-    }
-
     @Override
     public void setupDialog(Dialog dialog, int style) {
         super.setupDialog(dialog, style);
+
+        if(getArguments() != null){
+            String comicId = getArguments().getString("comicId");
+            //Todo: query
+        }
 
         View contentView = View.inflate(getContext(), R.layout.fragment_episode_bottom_sheet, null);
         dialog.setContentView(contentView);
@@ -69,7 +72,10 @@ public class EpisodeBottomSheetDialogFragment extends BottomSheetDialogFragment 
 
         mEpisodeListAdapter = new EpisodeListAdapter(getContext());
         mEpisodeListAdapter.setOnItemClickListener(episode -> {
-            //Todo: show detail activity
+            String episodeId = episode.getId();
+            Intent intent = new Intent(getContext(), ContentsActivity.class);
+            intent.putExtra("episodeId", episodeId);
+            startActivity(intent);
         });
         mRvEpisode.setHasFixedSize(true);
         mRvEpisode.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
